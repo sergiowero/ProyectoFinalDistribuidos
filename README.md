@@ -7,7 +7,7 @@ En este proyecto se usa:
 
 ## Formato de datos
 Los datos se mandaran y recibirar como texto, usando JSON como formato.
-La libreria usada sera GSON:
+La libreria usada sera GSON de google, algunas links de interes:
 
 * [GSON](https://github.com/google/gson)
 * [Tutorial de GSON](http://www.studytrails.com/java/json/java-google-json-introduction/)
