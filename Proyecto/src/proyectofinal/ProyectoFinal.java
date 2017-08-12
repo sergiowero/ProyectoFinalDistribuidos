@@ -5,6 +5,7 @@
  */
 package proyectofinal;
 
+import communication.MulticastPeer;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -12,6 +13,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+
+import messages.*;
 
 /**
  *
@@ -45,6 +48,26 @@ public class ProyectoFinal extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+<<<<<<< HEAD
+<<<<<<< HEAD
+        MulticastPeer peer=new MulticastPeer();
+=======
+=======
+>>>>>>> origin/HEAD
+        ////////////////////////////////////////////////
+        /// PRUEBAS DE PARSE DE MENSAJES Y PAYLOAD
+        PublishPayload publish = new PublishPayload("Topico", "Titulo", "Contenido");
+        Message message = MessageCreator.CreateMessageFromPayload(publish);
+        System.out.println(message.getPayload());
+        publish = (PublishPayload) MessageCreator.CreatePayloadFromMessage(message);
+        System.out.println("topic = " + publish.getTopic() + " | title = " + publish.getTitle() + " | content = " + publish.getContent());
+        /////////////////////////////////////////////////
+        
+<<<<<<< HEAD
+>>>>>>> e9d9ab0476fcad9ed84916bcfd960b4a519f47a9
+=======
+>>>>>>> origin/HEAD
         launch(args);
     }
     
