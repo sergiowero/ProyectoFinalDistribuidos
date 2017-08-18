@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package messages;
+package communication.messages;
 
 import communication.OpCode;
 
@@ -12,10 +12,10 @@ import communication.OpCode;
  * @author Laura
  */
 public class UnsubcribePayload implements Payload {
-    
+
     private final String topic;
-    
-    public UnsubcribePayload(String topic){
+
+    public UnsubcribePayload(String topic) {
         this.topic = topic;
     }
 
@@ -30,5 +30,5 @@ public class UnsubcribePayload implements Payload {
     public String getTopic() {
         return topic;
     }
-    
+
 }

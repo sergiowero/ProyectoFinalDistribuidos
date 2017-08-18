@@ -3,13 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package messages;
+package communication.messages;
 
 import communication.OpCode;
+
 /**
  *
  * @author Laura
  */
 public interface Payload {
+
     public OpCode GetOpCode();
 }

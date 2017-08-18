@@ -5,18 +5,13 @@
  */
 package communication;
 
-import messages.*;
+import communication.messages.Message;
+
 /**
  *
  * @author Sergio
  */
-public class Communication {
+public interface MessageListener {
 
-    public void Send(Message message){
-        
-    }
-    
-    public Message Receive() throws Exception {
-        throw new Exception("Not implmented, yet");
-    }
+    void messageReceived(Message message);
 }

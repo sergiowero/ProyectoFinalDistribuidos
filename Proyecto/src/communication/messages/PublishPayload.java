@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package messages;
+package communication.messages;
 
 import communication.OpCode;
 
@@ -13,16 +13,16 @@ import communication.OpCode;
  */
 public class PublishPayload implements Payload {
 
-    private final String topic;
+    private final int topic;
     private final String title;
     private final String content;
-    
-    public PublishPayload(String topic, String title, String content){
+
+    public PublishPayload(int topic, String title, String content) {
         this.topic = topic;
         this.title = title;
         this.content = content;
     }
-    
+
     @Override
     public OpCode GetOpCode() {
         return OpCode.PUBLISH;
@@ -31,7 +31,7 @@ public class PublishPayload implements Payload {
     /**
      * @return the topic
      */
-    public String getTopic() {
+    public int getTopic() {
         return topic;
     }
 
@@ -48,5 +48,5 @@ public class PublishPayload implements Payload {
     public String getContent() {
         return content;
     }
-    
+
 }

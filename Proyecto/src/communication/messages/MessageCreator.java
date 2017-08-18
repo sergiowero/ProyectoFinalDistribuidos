@@ -3,30 +3,31 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package messages;
+package communication.messages;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
 /**
  *
  * @author Laura
  */
 public class MessageCreator {
-    
-    public static Message CreateMessageFromPayload(Payload payload){
+
+    public static Message CreateMessageFromPayload(Payload payload) {
         GsonBuilder builder = new GsonBuilder();
         Gson gson = builder.create();
         String payloadData = gson.toJson(payload);
         return new Message(payload.GetOpCode(), payloadData);
     }
-    
-    public static Payload CreatePayloadFromMessage(Message message){
+
+    public static Payload CreatePayloadFromMessage(Message message) {
         GsonBuilder builder = new GsonBuilder();
         Gson gson = builder.create();
-        
+
         String payloadText = message.getPayload();
         Payload payload = null;
-        switch(message.getOpCode()){
+        switch (message.getOpCode()) {
             case SUBSCRIBE:
                 payload = gson.fromJson(payloadText, SubscribePayload.class);
                 break;
@@ -39,8 +40,14 @@ public class MessageCreator {
             case NOTIFY:
                 payload = gson.fromJson(payloadText, NotifyPayload.class);
                 break;
+            case JOIN_GROUP:
+                payload = gson.fromJson(payloadText, JoinGroupPayload.class);
+                break;
+            case LEAVE_GROUP:
+                payload = gson.fromJson(payloadText, LeaveGroupPayload.class);
+                break;
         }
-        
+
         return payload;
     }
 }

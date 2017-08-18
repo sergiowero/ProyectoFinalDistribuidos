@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package messages;
+package communication.messages;
 
 import communication.OpCode;
 import java.util.ArrayList;
@@ -13,13 +13,13 @@ import java.util.ArrayList;
  * @author Laura
  */
 public class SubscribePayload implements Payload {
-    
+
     private final ArrayList<String> topics;
 
-    public SubscribePayload(){
-         topics = new ArrayList<>();
+    public SubscribePayload() {
+        topics = new ArrayList<>();
     }
-    
+
     @Override
     public OpCode GetOpCode() {
         return OpCode.SUBSCRIBE;
@@ -31,5 +31,5 @@ public class SubscribePayload implements Payload {
     public ArrayList<String> getTopics() {
         return topics;
     }
-    
+
 }
